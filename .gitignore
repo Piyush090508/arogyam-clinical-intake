@@ -1,0 +1,16 @@
+tmp/
+.docx-review/
+.sites-runtime/
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+data/authorized-devices.json
+data/authorized-devices.json.tmp
+data/patients.json
+data/patients.json.tmp
+data/patients.sqlite
+data/patients.sqlite-shm
+data/patients.sqlite-wal
+.env
+

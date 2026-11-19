@@ -1,0 +1,24 @@
+name: aarogyam
+
+services:
+  site:
+    build: .
+    container_name: aarogyam-site
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PATIENT_DATA_KEY: ${PATIENT_DATA_KEY}
+      MSG91_WIDGET_ID: ${MSG91_WIDGET_ID}
+      MSG91_WIDGET_TOKEN: ${MSG91_WIDGET_TOKEN}
+      MSG91_AUTH_KEY: ${MSG91_AUTH_KEY}
+      ELEVENLABS_API_KEY: ${ELEVENLABS_API_KEY:-}
+      ELEVENLABS_AGENT_ID: ${ELEVENLABS_AGENT_ID:-}
+    volumes:
+      - ./data:/app/data
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+    name: cashfree-subscription-bot_default
